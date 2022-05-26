@@ -18,6 +18,7 @@ const [showFood, setShowFood] = useState(true);
 const addFood = (newFood) =>{
   const updatedFood = [ ...food, newFood]
   setFood(updatedFood);
+  setSearchFood(updatedFood);
 }
 
 const toggleShow =() =>{
@@ -46,6 +47,7 @@ setSearchFood(filteredElements) //because we are doing the map in the searchbar
     {/* <h1>Food List</h1> */}
 {/* if toggle is true shows form with hide btn, otherwise if its false hides and shows add btn*/}
  {showFood && <AddFoodForm addFood={addFood}/>} 
+ 
 
  <Button onClick={toggleShow}> {showFood ? "Hide Form ": "Add New Food"} </Button>
 
